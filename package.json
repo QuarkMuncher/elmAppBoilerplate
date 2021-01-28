@@ -1,0 +1,17 @@
+{
+  "name": "scorkeep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "devDependencies": {
+    "clear": "0.1.0",
+    "gulp": "4.0.2",
+    "gulp-util": "3.0.8",
+    "st": "2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sebastian Andersen (QuarkMuncher)",
+  "license": "ISC"
+}
