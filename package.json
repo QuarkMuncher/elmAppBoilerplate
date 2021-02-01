@@ -13,5 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sebastian Andersen (QuarkMuncher)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }

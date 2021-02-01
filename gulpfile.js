@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config();
 var gulp = require('gulp'),
     http = require('http'),
     st = require('st'),
@@ -8,13 +8,12 @@ var gulp = require('gulp'),
     clear = require('clear'),
     counter = 0;
 
-var cmd = 'elm make ./src/Main.elm --output ./bundle.js';
+var cmd = `elm make ${process.env.SOURCE_FOLDER}/${process.env.MAIN_FILE_NAME}.elm --output ./bundle.js`;
 clear();
-gulp.task('default', gulp.parallel(server, watch, elm));
 
 
-function watch(cb) {
-    gulp.watch('**/*.elm', elm);
+function watch() {
+    gulp.watch(`${process.env.SOURCE_FOLDER}/*.elm`, { usePolling: true, ignoreInitial: false }, elm);
 }
 
 function server(done) {
@@ -42,3 +41,5 @@ function elm(cb) {
     });
     counter++;
 }
+
+exports.default = gulp.series(server, elm, watch);
